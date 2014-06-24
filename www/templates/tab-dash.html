@@ -1,0 +1,44 @@
+<ion-view title="Bookmarks">
+  <ion-content class="has-header padding">
+    <ion-refresher
+    pulling-text="Pull to refresh distances..."
+    on-refresh="getDistances()">
+    </ion-refresher>
+
+    <div class="list">
+
+      <a ng-repeat="location in locations" class="item item-icon-left item-icon-right" href="maps:q={{location.latitude}},{{location.longitude}}">
+          <div class="float-left">
+            <i class="icon ion-flag"></i>
+            <h2>{{location.name}}</h2>
+          </div>
+          <div class="distance float-right">
+            <i ng-hide="haveDistances" class="icon ion-refreshing"></i>
+          </div>
+          <div class="distance float-right">
+            <span ng-show="haveDistances">3.2 Miles</span>
+          </div>
+      </a>
+    </div>
+
+    <div ng-hide="locations.length < 2 && locations.length > 0">
+
+      <div class="card">
+        <div class="item item-text-wrap">
+            You only have a few locations.
+            Add more on the bookmark tab.
+        </div>
+      </div>
+
+    </div>
+
+    <div ng-hide="locations.length">
+      Oops!  No bookmarks added yet!  Click the Add Bookmark tab to add one.
+    </div>
+
+
+  </ion-content>
+</ion-view>
+
+
+Distance: {{location.distance}}

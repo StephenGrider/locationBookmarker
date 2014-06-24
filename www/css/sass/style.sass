@@ -1,0 +1,93 @@
+/* Empty. Add your own CSS if you like */
+
+
+.spinner-container{
+  text-align: center;
+  margin-top: 100px;
+}
+
+.float-right {
+  float: right;
+}
+
+.float-right > .icon {
+  margin-left: -30px;
+}
+
+.float-left {
+  float: left;
+}
+
+.item {
+  padding-right: 5px;
+}
+
+
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background: #eee;
+}
+
+.wave {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  background: linear-gradient(to top, #26a 0%, #26a 50%, #eee 50%, #eee 100%);
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    background: #eee;
+  }
+  @for $i from 1 through 24 {
+    $s: 200px;
+    &:nth-child(#{$i}) {
+      width: $s - ($i * 20);
+      height: $s - ($i * 20);
+      margin-top: -($s / 2) + ($i * 10);
+      margin-left: -($s / 2) + ($i * 10);
+      &:before {
+        width: $s - ($i * 20) - 10;
+        height: $s - ($i * 20) - 10;
+        margin-top: -($s / 2) + ($i * 10) + 5;
+        margin-left: -($s / 2) + ($i * 10) + 5;
+      }
+    }
+  }
+  animation: wave 1.5s infinite alternate;
+}
+
+@keyframes wave {
+  100% {
+    transform: rotate(175deg);
+  }
+}
+
+@for $i from 1 through 24 {
+  .wave:nth-child(#{$i}) {
+    $t: $i / 10 + s;
+    animation-delay: $t;
+  }
+}
+
+body:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 250px;
+  margin-left: -250px;
+  background: #eee;
+}

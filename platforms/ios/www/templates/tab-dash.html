@@ -1,0 +1,29 @@
+<ion-view title="Dashboard">
+  <ion-content class="has-header padding">
+
+
+    <!-- <div ng-repeat="(index, friend) in friends" type="item-text-wrap" href="#/tab/friend/{{friend.id}}">
+
+    </div> -->
+
+    <div class="list">
+      <label class="item item-input">
+        <input type="text" placeholder="Location Name" ng-model="name">
+      </label>
+    </div>
+    <button class="button button-block button-calm" ng-click="setBookmark(name)">
+      Bookmark My Current Location!
+    </button>
+
+    <div class="list">
+      <a ng-repeat="location in locations" class="item item-avatar" href="maps:q={{location.latitude}},{{location.longitude}}">
+        <img src="img/marker.jpeg">
+        <h2>{{location.name}}</h2>
+        <p>{{goToText()}}</p>
+      </a>
+
+    </div>
+
+
+  </ion-content>
+</ion-view>
