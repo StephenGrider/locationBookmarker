@@ -13,15 +13,15 @@
             <h2>{{location.name}}</h2>
           </div>
           <div class="distance float-right">
-            <i ng-hide="haveDistances" class="icon ion-refreshing"></i>
+            <img src="/img/ajax_loader.gif" ng-hide="haveDistances" class="ajax-spinner"></img>
           </div>
           <div class="distance float-right">
-            <span ng-show="haveDistances">3.2 Miles</span>
+            <span ng-show="haveDistances">{{location.distance}} miles</span>
           </div>
       </a>
     </div>
 
-    <div ng-hide="locations.length < 2 && locations.length > 0">
+    <div ng-show="locations.length < 2 && locations.length > 0">
 
       <div class="card">
         <div class="item item-text-wrap">

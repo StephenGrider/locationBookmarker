@@ -21,3 +21,13 @@
 .item {
   padding-right: 5px;
 }
+
+.navbar-settings {
+  font-size: 35px;
+  margin-left: 270px;
+}
+
+.ajax-spinner {
+  height: 30px;
+  width: 30px;
+}

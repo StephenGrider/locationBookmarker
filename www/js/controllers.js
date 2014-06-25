@@ -1,19 +1,27 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope, Locations, $q) {
+.controller('NavCtrl', function($scope){
+  $scope.settingsClick = function() {
+    $rootScope.$emit('navbar:settings:click'); 
+  }
+})
+
+.controller('DashCtrl', function($scope, Locations, $q, $timeout) {
   $scope.locations = Locations.getAll();
 
   $scope.getDistances = function(){
     $scope.haveDistances = false;
-    $scope.$apply();
     var promise = Locations.getAllWithDistances()
     promise.then(function(locs){
+      $timeout(function(){
         $scope.locations = locs;
         $scope.haveDistances = true
         $scope.$apply();
         $scope.$broadcast('scroll.refreshComplete');
-      })
+      }.bind(this),2500);
+    })
   };
+  $timeout(function(){$scope.$apply}.bind(this))
   $scope.getDistances();
 
   $scope.goToText = function() {
@@ -21,9 +29,16 @@ angular.module('starter.controllers', [])
     return resp[0] //randomize
   };
 
+  $('.navbar-settings').show()
+
+  $scope.showRemove = function() {
+    console.log('hi')
+  }
+
 })
 
 .controller('FriendsCtrl', function($scope, Locations) {
+  $('.navbar-settings').hide()
   $scope.setBookmark = function(name) {
     navigator.geolocation.getCurrentPosition(function(position) {
       $scope.locations = Locations.create(position, name)
