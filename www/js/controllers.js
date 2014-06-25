@@ -9,7 +9,6 @@ angular.module('starter.controllers', [])
 .controller('DashCtrl', function($scope, Locations, $q, $timeout, $rootScope) {
   $scope.locations = Locations.getAll();
 
-
   $rootScope.$on('navbar:settings:click', function() {
     $scope.edit = !$scope.edit;
   })
@@ -38,13 +37,8 @@ angular.module('starter.controllers', [])
 
   $scope.goToText = function() {
     var resp = ['Lets go!', 'Take me there.', 'Directions'];
-    return resp[0] //randomize
+    return resp[0]
   };
-
-  $scope.showRemove = function() {
-    console.log('hi')
-  }
-
 })
 
 .controller('FriendsCtrl', function($scope, Locations) {
