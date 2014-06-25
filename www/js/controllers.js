@@ -1,13 +1,23 @@
 angular.module('starter.controllers', [])
 
-.controller('NavCtrl', function($scope){
+.controller('NavCtrl', function($scope, $rootScope){
   $scope.settingsClick = function() {
-    $rootScope.$emit('navbar:settings:click'); 
+    $rootScope.$emit('navbar:settings:click');
   }
 })
 
-.controller('DashCtrl', function($scope, Locations, $q, $timeout) {
+.controller('DashCtrl', function($scope, Locations, $q, $timeout, $rootScope) {
   $scope.locations = Locations.getAll();
+
+
+  $rootScope.$on('navbar:settings:click', function() {
+    $scope.edit = !$scope.edit;
+  })
+
+  $scope.deleteLocation = function(index) {
+    Locations.deleteByIndex(index)
+    $scope.locations = Locations.getAll()
+  }
 
   $scope.getDistances = function(){
     $scope.haveDistances = false;
@@ -24,12 +34,12 @@ angular.module('starter.controllers', [])
   $timeout(function(){$scope.$apply}.bind(this))
   $scope.getDistances();
 
+  $('.navbar-settings').show() //yolo
+
   $scope.goToText = function() {
     var resp = ['Lets go!', 'Take me there.', 'Directions'];
     return resp[0] //randomize
   };
-
-  $('.navbar-settings').show()
 
   $scope.showRemove = function() {
     console.log('hi')

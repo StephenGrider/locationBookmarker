@@ -58,8 +58,10 @@ angular.module('starter.services', [])
       localStorage.setItem('__locations', JSON.stringify(locationArray))
       return locationArray
     },
-    delete: function() {
-
+    deleteByIndex: function(index) {
+      locations = JSON.parse(localStorage.getItem('__locations'))
+      locations.splice(index,1)
+      localStorage.setItem('__locations', JSON.stringify(locations))
     },
     _rad: function(x) {
       return x * Math.PI / 180;

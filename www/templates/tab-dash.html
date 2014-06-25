@@ -7,16 +7,21 @@
 
     <div class="list">
 
-      <a ng-repeat="location in locations" class="item item-icon-left item-icon-right" href="maps:q={{location.latitude}},{{location.longitude}}">
+      <a ng-repeat="(index,location) in locations" class="item item-icon-left item-icon-right" href="maps:q={{location.latitude}},{{location.longitude}}">
           <div class="float-left">
             <i class="icon ion-flag"></i>
             <h2>{{location.name}}</h2>
           </div>
-          <div class="distance float-right">
+          <div class="float-right" ng-hide="edit">
             <img src="/img/ajax_loader.gif" ng-hide="haveDistances" class="ajax-spinner"></img>
           </div>
-          <div class="distance float-right">
+          <div class="float-right" ng-hide="edit">
             <span ng-show="haveDistances">{{location.distance}} miles</span>
+          </div>
+          <div class=" float-right">
+            <button class="button button-assertive delete-button" ng-show="edit" ng-click="deleteLocation(index)">
+              Delete
+            </button>
           </div>
       </a>
     </div>
