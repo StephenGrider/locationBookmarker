@@ -1,30 +1,5 @@
 angular.module('starter.services', [])
 
-/**
- * A simple example service that returns some data.
- */
-.factory('Friends', function() {
-  // Might use a resource here that returns a JSON array
-
-  // Some fake testing data
-  var friends = [
-    { id: 0, name: 'Scruff McGruff' },
-    { id: 1, name: 'G.I. Joe' },
-    { id: 2, name: 'Miss Frizzle' },
-    { id: 3, name: 'Ash Ketchum' }
-  ];
-
-  return {
-    all: function() {
-      return friends;
-    },
-    get: function(friendId) {
-      // Simple index lookup
-      return friends[friendId];
-    }
-  }
-})
-
 .factory('Locations', function($q) {
   return {
     getAllWithDistances: function() {
@@ -58,8 +33,10 @@ angular.module('starter.services', [])
       localStorage.setItem('__locations', JSON.stringify(locationArray))
       return locationArray
     },
-    delete: function() {
-
+    deleteByIndex: function(index) {
+      locations = JSON.parse(localStorage.getItem('__locations'))
+      locations.splice(index,1)
+      localStorage.setItem('__locations', JSON.stringify(locations))
     },
     _rad: function(x) {
       return x * Math.PI / 180;
@@ -73,7 +50,7 @@ angular.module('starter.services', [])
         Math.sin(dLong / 2) * Math.sin(dLong / 2);
       var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
       var d = R * c;
-      return d;
+      return d.toFixed(2) + " miles";
     }
   }
 });

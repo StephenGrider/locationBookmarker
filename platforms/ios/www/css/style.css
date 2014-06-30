@@ -1,23 +1,48 @@
 /* Empty. Add your own CSS if you like */
 
+html, body {
+  height: 100%;
+  width: 100%;
+}
 
-.spinner-container{
+.navbar-settings {
+  font-size: 35px;
+  margin-left: 270px;
+}
+
+.distance {
+  font-style: italic;
+  font-size: 12px;
+}
+
+.box {
+  height: 100%
+}
+
+.box > h1{
+  color: white;
   text-align: center;
-  margin-top: 100px;
+  position: relative;
+  top: 30%;
+  transform: translateY(-50%);
 }
 
-.float-right {
-  float: right;
+.navbar-settings {
+  padding-left:5px;
 }
 
-.float-right > .icon {
-  margin-left: -30px;
+.blue {
+  background: blue;
 }
 
-.float-left {
-  float: left;
+.yellow {
+  background: yellow;
 }
 
-.item {
-  padding-right: 5px;
+.pink {
+  background: pink;
+}
+
+.slider {
+  height: 100%;
 }

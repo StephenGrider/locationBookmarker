@@ -1,0 +1,38 @@
+<ion-view title="Bookmarks">
+  <ion-content class="has-header">
+
+
+    <div class="list">
+      <form>
+        <label class="item item-input">
+          <input required type="text" placeholder="Enter a location name here!" ng-model="name">
+        </label>
+        <button ng-disabled="!name.length" class="button button-block button-calm" ng-click="setBookmark(name)">
+          Bookmark My Current Location!
+        </button>
+      </form>
+    </div>
+
+
+    <div ng-show="settingBookmark" class="row">
+      <div class="col spinner-container">
+
+
+        <div class="wave">asdf</div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+
+
+
+      </div>
+
+    <div>
+
+  </ion-content>
+</ion-view>
