@@ -19,27 +19,27 @@ angular.module('starter.controllers', [])
   })
 
   $scope.deleteLocation = function(index, event) {
-    event.stopPropagation()
-    Locations.deleteByIndex(index)
-    $scope.locations = Locations.getAll()
+    event.stopPropagation();
+    Locations.deleteByIndex(index);
+    $scope.locations = Locations.getAll();
   }
 
   $scope.getDistances = function(){
     $scope.haveDistances = false;
-    var promise = Locations.getAllWithDistances()
+    var promise = Locations.getAllWithDistances();
     promise.then(function(locs){
       $timeout(function(){
         $scope.locations = locs;
-        $scope.haveDistances = true
+        $scope.haveDistances = true;
         $scope.$apply();
         $scope.$broadcast('scroll.refreshComplete');
       }.bind(this),2500);
     })
   };
-  $timeout(function(){$scope.$apply}.bind(this))
+  $timeout(function(){$scope.$apply}.bind(this));
   $scope.getDistances();
 
-  $('.navbar-settings').show() //yolo
+  $('.navbar-settings').show(); //yolo
 
   $scope.goToText = function() {
     var resp = ['Lets go!', 'Take me there.', 'Directions'];
@@ -48,12 +48,14 @@ angular.module('starter.controllers', [])
 })
 
 .controller('BookmarkCtrl', function($scope, Locations) {
-  $('.navbar-settings').hide()
+  $('.navbar-settings').hide();
+  $scope.settingBookmark = true;
 
   $scope.setBookmark = function(name) {
     navigator.geolocation.getCurrentPosition(function(position) {
       $scope.settingBookmark = false;
-      $scope.locations = Locations.create(position, name)
+      $('.bookmark-complete').animate({'font-size': '50px'}, 200);
+      $scope.locations = Locations.create(position, name);
     })
   }
 });

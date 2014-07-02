@@ -1,6 +1,6 @@
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
-.run(function($ionicPlatform, $state) {
+.run(function($ionicPlatform, $state, Locations) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
@@ -12,6 +12,22 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
     var tutorialComplete = JSON.parse(localStorage.getItem('__locations:tutorialComplete'));
     if(!tutorialComplete) {
+      var sf = {
+        coords: {
+          longitude: 74.0059,
+          latitude: 40.7127
+        }
+      }
+
+      var ny = {
+        coords: {
+          longitude: 122.4167,
+          latitude: 37.7833
+        }
+      }
+
+      Locations.create(sf, 'San Francisco')
+      Locations.create(ny, 'New York')
       localStorage.setItem('__locations:tutorialComplete', 'true')
       $state.go('intro')
       $('.nav-bar').hide()

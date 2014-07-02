@@ -26,3 +26,20 @@
 2014-06-21 17:52:11.292 HelloCordova[76811:80b] [CDVTimer][TotalPluginStartup] 2.907991ms
 2014-06-21 17:52:11.572 HelloCordova[76811:80b] Resetting plugins due to page load.
 2014-06-21 17:52:11.853 HelloCordova[76811:80b] Finished load of: file:///Users/stepheng/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/126ECD6D-ED70-46F0-BE4F-65FAFBC2DA39/HelloCordova.app/www/index.html#/tab/dash
+2014-07-01 13:39:12.573 HelloCordova[6559:80b] Multi-tasking -> Device: YES, App: YES
+2014-07-01 13:39:12.612 HelloCordova[6559:80b] Unlimited access to network resources
+2014-07-01 13:39:12.816 HelloCordova[6559:80b] [CDVTimer][keyboard] 0.113010ms
+2014-07-01 13:39:12.817 HelloCordova[6559:80b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-07-01 13:39:12.817 HelloCordova[6559:80b] [CDVTimer][statusbar] 0.542998ms
+2014-07-01 13:39:12.818 HelloCordova[6559:80b] [CDVTimer][TotalPluginStartup] 1.836002ms
+2014-07-01 13:39:13.018 HelloCordova[6559:80b] Resetting plugins due to page load.
+2014-07-01 13:39:13.406 HelloCordova[6559:80b] Finished load of: file:///Users/stepheng/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/126ECD6D-ED70-46F0-BE4F-65FAFBC2DA39/HelloCordova.app/www/index.html#/tab/dash
+2014-07-01 13:39:31.679 HelloCordova[6559:80b] Received memory warning.
+2014-07-01 13:40:16.700 HelloCordova[6991:80b] Multi-tasking -> Device: YES, App: YES
+2014-07-01 13:40:16.710 HelloCordova[6991:80b] Unlimited access to network resources
+2014-07-01 13:40:16.734 HelloCordova[6991:80b] [CDVTimer][keyboard] 0.072002ms
+2014-07-01 13:40:16.734 HelloCordova[6991:80b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-07-01 13:40:16.735 HelloCordova[6991:80b] [CDVTimer][statusbar] 0.208974ms
+2014-07-01 13:40:16.735 HelloCordova[6991:80b] [CDVTimer][TotalPluginStartup] 0.787973ms
+2014-07-01 13:40:16.925 HelloCordova[6991:80b] Resetting plugins due to page load.
+2014-07-01 13:40:17.357 HelloCordova[6991:80b] Finished load of: file:///Users/stepheng/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/126ECD6D-ED70-46F0-BE4F-65FAFBC2DA39/HelloCordova.app/www/index.html#/tab/dash
