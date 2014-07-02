@@ -53,6 +53,7 @@ angular.module('starter.controllers', [])
 
   $scope.setBookmark = function(name) {
     navigator.geolocation.getCurrentPosition(function(position) {
+      debugger
       $scope.settingBookmark = false;
       $('.bookmark-complete').animate({'font-size': '50px'}, 200);
       $scope.locations = Locations.create(position, name);
